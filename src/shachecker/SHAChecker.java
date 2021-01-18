@@ -28,11 +28,10 @@ public class SHAChecker {
                 MessageDigest md = MessageDigest.getInstance("SHA");
                 File file = new File(args[0]);
 
-                FileInputStream fileInputStream;
                 byte[] data = new byte[(int) file.length()];
-                fileInputStream = new FileInputStream(file);
-                fileInputStream.read(data);
-                fileInputStream.close();
+                try (FileInputStream fileInputStream = new FileInputStream(file)) {
+                    fileInputStream.read(data);
+                }
 
                 byte[] digest = md.digest(data);
 
@@ -42,11 +41,11 @@ public class SHAChecker {
                 }
                 
                 String result = sb.toString().toUpperCase();
-                String desiredSHA = args[1].toUpperCase();
 
                 System.out.println(result + " (File)");
                 
                 if(args.length == 2) {
+                    String desiredSHA = args[1].toUpperCase();
                     System.out.println(desiredSHA + " (Desired)");
                     if(result.equals(desiredSHA)) {
                         System.out.println("Correct!");

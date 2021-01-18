@@ -41,11 +41,11 @@ public class SHAChecker {
                 }
                 
                 String result = sb.toString().toUpperCase();
-                String desiredSHA = args[1].toUpperCase();
 
                 System.out.println(result + " (File)");
                 
                 if(args.length == 2) {
+                    String desiredSHA = args[1].toUpperCase();
                     System.out.println(desiredSHA + " (Desired)");
                     if(result.equals(desiredSHA)) {
                         System.out.println("Correct!");

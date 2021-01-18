@@ -29,3 +29,5 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+.vscode/launch.json
+test/ForTestFile

@@ -28,11 +28,10 @@ public class SHAChecker {
                 MessageDigest md = MessageDigest.getInstance("SHA");
                 File file = new File(args[0]);
 
-                FileInputStream fileInputStream;
                 byte[] data = new byte[(int) file.length()];
-                fileInputStream = new FileInputStream(file);
-                fileInputStream.read(data);
-                fileInputStream.close();
+                try (FileInputStream fileInputStream = new FileInputStream(file)) {
+                    fileInputStream.read(data);
+                }
 
                 byte[] digest = md.digest(data);
 

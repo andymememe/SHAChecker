@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package shachecker;
 
 import java.io.File;
@@ -11,15 +6,7 @@ import java.io.IOException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-/**
- *
- * @author root
- */
-public class SHAChecker {
-
-    /**
-     * @param args the command line arguments
-     */
+public class Main {
     public static void main(String[] args) {
         if (args.length == 0) {
             System.err.println("usage: SHAChecker filename [compare-sha]");
@@ -58,5 +45,4 @@ public class SHAChecker {
             }
         }
     }
-
 }

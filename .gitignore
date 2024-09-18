@@ -31,3 +31,4 @@ nbdist/
 .nb-gradle/
 .vscode/launch.json
 test/ForTestFile
+shachecker/target/*
